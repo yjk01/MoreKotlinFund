@@ -20,3 +20,10 @@ groupedEvents.forEach { (daypart, events) ->
 }
 
 println("Last event of the day: ${events.last().title}")
+
+val Event.durationOfEvent: String
+    get() = if (this.durationInMinutes < 60) {
+        "short"
+    } else {
+        "long"
+    }
